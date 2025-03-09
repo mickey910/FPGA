@@ -1,5 +1,9 @@
 Analysis & Synthesis report for lab1
+<<<<<<< HEAD
 Sat Mar 01 17:38:50 2025
+=======
+Sat Mar 01 15:44:19 2025
+>>>>>>> 634373b (3/9)
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -42,7 +46,11 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis Status     ; Successful - Sat Mar 01 17:38:50 2025       ;
+=======
+; Analysis & Synthesis Status     ; Successful - Sat Mar 01 15:44:19 2025       ;
+>>>>>>> 634373b (3/9)
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                   ; lab1                                        ;
 ; Top-level Entity Name           ; lab1                                        ;
@@ -154,14 +162,20 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
+<<<<<<< HEAD
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
+=======
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+>>>>>>> 634373b (3/9)
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+<<<<<<< HEAD
 ;     Processors 2-20        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -173,6 +187,19 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------+---------+
 ; lab1.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/shnbw/Desktop/FPGA/lab1/lab1.v ;         ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------+---------+
+=======
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; lab1.v                           ; yes             ; Auto-Found Verilog HDL File  ; D:/FPGA/lab1/lab1.v          ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+>>>>>>> 634373b (3/9)
 
 
 +-----------------------------------------------------------+
@@ -230,7 +257,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
+<<<<<<< HEAD
 ; Top            ; 00:00:00     ;
+=======
+; Top            ; 00:00:01     ;
+>>>>>>> 634373b (3/9)
 +----------------+--------------+
 
 
@@ -240,9 +271,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+<<<<<<< HEAD
     Info: Processing started: Sat Mar 01 17:38:40 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
+=======
+    Info: Processing started: Sat Mar 01 15:44:04 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+>>>>>>> 634373b (3/9)
 Warning (12125): Using design file lab1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lab1
 Warning (10236): Verilog HDL Implicit Net warning at lab1.v(162): created implicit net for "e3"
@@ -273,7 +310,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[7]" is stuck at GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+<<<<<<< HEAD
 Info (144001): Generated suppressed messages file C:/Users/shnbw/Desktop/FPGA/lab1/output_files/lab1.map.smsg
+=======
+Info (144001): Generated suppressed messages file D:/FPGA/lab1/output_files/lab1.map.smsg
+>>>>>>> 634373b (3/9)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -283,15 +324,26 @@ Info (21057): Implemented 97 device resources after synthesis - the final resour
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 35 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 29 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 4743 megabytes
     Info: Processing ended: Sat Mar 01 17:38:50 2025
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:01
+=======
+    Info: Peak virtual memory: 4705 megabytes
+    Info: Processing ended: Sat Mar 01 15:44:19 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:03
+>>>>>>> 634373b (3/9)
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
+<<<<<<< HEAD
 The suppressed messages can be found in C:/Users/shnbw/Desktop/FPGA/lab1/output_files/lab1.map.smsg.
+=======
+The suppressed messages can be found in D:/FPGA/lab1/output_files/lab1.map.smsg.
+>>>>>>> 634373b (3/9)
 
 
