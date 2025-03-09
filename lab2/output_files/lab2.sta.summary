@@ -2,52 +2,52 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
-Slack : -0.101
-TNS   : -0.195
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.672
+TNS   : -124.625
 
-Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
-Slack : 0.222
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.292
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.537
-TNS   : -3.906
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -66.628
 
-Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
-Slack : -0.123
-TNS   : -0.244
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.530
+TNS   : -127.636
 
-Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
-Slack : 0.208
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.269
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.522
-TNS   : -3.911
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -61.863
 
-Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
-Slack : 0.375
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -0.992
+TNS   : -30.751
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.171
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
-Slack : 0.131
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.397
+TNS   : -45.033
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -0.816
+TNS   : -25.387
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.154
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.648
-TNS   : -4.766
-
-Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
-Slack : 0.404
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
-Slack : 0.119
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.675
-TNS   : -5.133
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.434
+TNS   : -53.900
 
 ------------------------------------------------------------

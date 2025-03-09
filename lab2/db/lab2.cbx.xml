@@ -1,5 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="lab2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|part7|part7_counter1:min_cr|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_12i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|part7|part7_counter2:hr_cr|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_12i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|part7|part7_counter:sec_cr|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_42i.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

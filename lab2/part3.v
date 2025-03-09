@@ -1,4 +1,4 @@
-/*part3  16-bit counter using verilog statment Q<=Q+1*/
+/*part3  4-bit counter using verilog statment Q<=Q+1*/
 module part3(KEY, SW, HEX3,HEX2, HEX1, HEX0);
 input [3:0] KEY;
 input [9:0] SW;
@@ -14,29 +14,14 @@ assign HEX0 = a;
 assign HEX1 = b;
 assign HEX2 = c;
 assign HEX3 = d;
-
-assign T0 = enable;
-assign T1 = Q[0] & T0;
-assign T2 = Q[1] & T1;
-assign T3 = Q[2] & T2;
-
-always@ (posedge clk)begin //flipflop0
-	if(T0)
-		Q[0] <= Q[0] + 1;
- 
-//flipflop1
-	if(T1)
-		Q[1] <= Q[1] + 1;
-//flipflop2
-	if(T2)
-		Q[2] <= Q[2] + 1;
-//flipflop3
-	if(T3)
-		Q[3] <= Q[3] + 1;
-//reset
-	if(~reset)
-		Q[3:0] = 4'b0;
-
+	
+always@ (posedge clk)begin //flipflop
+	if (~reset)
+		Q <= 4'b0;
+	else if(enable)
+		Q <= Q +1;
+	else 
+		Q <= Q;
 end
 always@ (*)begin;//display
 	if(Q[0])

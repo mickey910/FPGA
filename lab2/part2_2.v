@@ -1,4 +1,4 @@
-/*part2-2 16-bitcounter using Tflip-flop module*/
+/*part2-2 4-bitcounter using Tflip-flop module*/
 module part2_2(KEY, SW, HEX3,HEX2, HEX1, HEX0);
 input [3:0] KEY;
 input [9:0] SW;

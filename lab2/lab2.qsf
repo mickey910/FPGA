@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY part3
+set_global_assignment -name TOP_LEVEL_ENTITY part7
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:07:32  MARCH 07, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
@@ -295,16 +295,26 @@ set_location_assignment PIN_E12 -to VGA_R[6]
 set_location_assignment PIN_F13 -to VGA_R[7]
 set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_D11 -to VGA_VS
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE part6_counter.v
+set_global_assignment -name VERILOG_FILE part5.v
+set_global_assignment -name VERILOG_FILE part4_LPM_COUNTER.v
 set_global_assignment -name VERILOG_FILE blocking.v
 set_global_assignment -name VERILOG_FILE part2_2.v
-set_global_assignment -name QIP_FILE ip_counter.qip
-set_global_assignment -name VERILOG_FILE ip_counter.v
 set_global_assignment -name VERILOG_FILE lab2.v
 set_global_assignment -name CDF_FILE output_files/output_files/Chain1.cdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/ip_count.vwf
 set_global_assignment -name VERILOG_FILE part3.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/counter.vwf
 set_global_assignment -name VERILOG_FILE noblocking.v
+set_global_assignment -name QIP_FILE part4_LPM_COUNTER.qip
+set_global_assignment -name VERILOG_FILE part4.v
+set_global_assignment -name QIP_FILE part5_counter.qip
+set_global_assignment -name QIP_FILE part6_counter.qip
+set_global_assignment -name VERILOG_FILE part6.v
+set_global_assignment -name QIP_FILE part7_counter.qip
+set_global_assignment -name VERILOG_FILE part7.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -711,4 +721,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DIR
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_NXT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_STP
+set_global_assignment -name QIP_FILE part7_counter1.qip
+set_global_assignment -name QIP_FILE part7_counter2.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

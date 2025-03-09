@@ -1,10 +1,10 @@
-// megafunction wizard: %LPM_COUNTER%VBB%
+// megafunction wizard: %LPM_COUNTER%
 // GENERATION: STANDARD
 // VERSION: WM1.0
 // MODULE: LPM_COUNTER 
 
 // ============================================================
-// File Name: ip_counter.v
+// File Name: part7_counter2.v
 // Megafunction Name(s):
 // 			LPM_COUNTER
 //
@@ -16,6 +16,7 @@
 //
 // 13.1.0 Build 162 10/23/2013 SJ Full Version
 // ************************************************************
+
 
 //Copyright (C) 1991-2013 Altera Corporation
 //Your use of Altera Corporation's design tools, logic functions 
@@ -31,58 +32,84 @@
 //Altera or its authorized distributors.  Please refer to the 
 //applicable agreement for further details.
 
-module ip_counter (
-	aclr,
-	cin,
+
+// synopsys translate_off
+`timescale 1 ps / 1 ps
+// synopsys translate_on
+module part7_counter2 (
 	clock,
+	sclr,
 	q);
 
-	input	  aclr;
-	input	  cin;
 	input	  clock;
-	output	[15:0]  q;
+	input	  sclr;
+	output	[31:0]  q;
+
+	wire [31:0] sub_wire0;
+	wire [31:0] q = sub_wire0[31:0];
+
+	lpm_counter	LPM_COUNTER_component (
+				.clock (clock),
+				.sclr (sclr),
+				.q (sub_wire0),
+				.aclr (1'b0),
+				.aload (1'b0),
+				.aset (1'b0),
+				.cin (1'b1),
+				.clk_en (1'b1),
+				.cnt_en (1'b1),
+				.cout (),
+				.data ({32{1'b0}}),
+				.eq (),
+				.sload (1'b0),
+				.sset (1'b0),
+				.updown (1'b1));
+	defparam
+		LPM_COUNTER_component.lpm_direction = "UP",
+		LPM_COUNTER_component.lpm_port_updown = "PORT_UNUSED",
+		LPM_COUNTER_component.lpm_type = "LPM_COUNTER",
+		LPM_COUNTER_component.lpm_width = 32;
+
 
 endmodule
 
 // ============================================================
 // CNX file retrieval info
 // ============================================================
-// Retrieval info: PRIVATE: ACLR NUMERIC "1"
+// Retrieval info: PRIVATE: ACLR NUMERIC "0"
 // Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 // Retrieval info: PRIVATE: ASET NUMERIC "0"
 // Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
 // Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
 // Retrieval info: PRIVATE: CNT_EN NUMERIC "0"
-// Retrieval info: PRIVATE: CarryIn NUMERIC "1"
+// Retrieval info: PRIVATE: CarryIn NUMERIC "0"
 // Retrieval info: PRIVATE: CarryOut NUMERIC "0"
 // Retrieval info: PRIVATE: Direction NUMERIC "0"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: PRIVATE: ModulusCounter NUMERIC "0"
 // Retrieval info: PRIVATE: ModulusValue NUMERIC "0"
-// Retrieval info: PRIVATE: SCLR NUMERIC "0"
+// Retrieval info: PRIVATE: SCLR NUMERIC "1"
 // Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 // Retrieval info: PRIVATE: SSET NUMERIC "0"
 // Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: nBit NUMERIC "16"
+// Retrieval info: PRIVATE: nBit NUMERIC "32"
 // Retrieval info: PRIVATE: new_diagram STRING "1"
 // Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 // Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
 // Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
-// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "16"
-// Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL "aclr"
-// Retrieval info: USED_PORT: cin 0 0 0 0 INPUT NODEFVAL "cin"
+// Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "32"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
-// Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
-// Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
-// Retrieval info: CONNECT: @cin 0 0 0 0 cin 0 0 0 0
+// Retrieval info: USED_PORT: q 0 0 32 0 OUTPUT NODEFVAL "q[31..0]"
+// Retrieval info: USED_PORT: sclr 0 0 0 0 INPUT NODEFVAL "sclr"
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 16 0 @q 0 0 16 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL ip_counter_bb.v TRUE
+// Retrieval info: CONNECT: @sclr 0 0 0 0 sclr 0 0 0 0
+// Retrieval info: CONNECT: q 0 0 32 0 @q 0 0 32 0
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL part7_counter2_bb.v TRUE
 // Retrieval info: LIB_FILE: lpm

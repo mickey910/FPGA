@@ -1,0 +1,8 @@
+/*part5 flash digit0~9*/
+module part5 (CLOCK50, HEX0);
+input CLOCK50;
+output [6:0] HEX0;
+
+
+
+endmodule
