@@ -1,0 +1,33 @@
+/* part5 multiplier (Array Multiplier)*/
+module part5(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+input [9:0] SW;
+output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+
+
+endmodule
+
+// multiplier
+module array_multiplier_8bit (
+    input [7:0] A, B,   // 8-bit 乘數 & 被乘數
+    output [15:0] P     // 16-bit 乘積
+);
+    wire [7:0] pp[7:0];   // 8 行部分積
+    wire [15:0] sum[6:0]; // 中間加法結果
+    integer i;
+    // 產生部分積
+    generate//動態產生重複的硬體結構
+        for (i = 0; i < 8; i = i + 1) begin
+            assign pp[i] = A & {8{B[i]}};
+        end
+    endgenerate
+    // 累加部分積
+    assign sum[0] = {8'b0, pp[0]};  // 第一行
+    assign sum[1] = sum[0] + {pp[1], 1'b0};
+    assign sum[2] = sum[1] + {pp[2], 2'b00};
+    assign sum[3] = sum[2] + {pp[3], 3'b000};
+    assign sum[4] = sum[3] + {pp[4], 4'b0000};
+    assign sum[5] = sum[4] + {pp[5], 5'b00000};
+    assign sum[6] = sum[5] + {pp[6], 6'b000000};
+    assign P = sum[6] + {pp[7], 7'b0000000};
+
+endmodule

@@ -1,0 +1,7 @@
+/*part7 multiplier 8*8 = 16*/
+module part7 ();
+
+
+endmodule
+
+/*============== submodule =============*/
