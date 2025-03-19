@@ -78,8 +78,11 @@ end
 
 //hr_counter 0~24
 always @(posedge clk)begin
+
 	if(hr == 23 && min == 59 && sec == 59 && sec_Q == 26'd49999999)
 		hr <= 0;
+	else if(min == 59 && sec == 59 && sec_Q == 26'd49999999)
+		hr <= hr + 1;
 	else if(set && select && (set_time < 24))
 		hr <= set_time;
 	else begin

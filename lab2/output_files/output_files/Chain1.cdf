@@ -4,9 +4,9 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Ign)
-		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
+		Device PartName(5CSEMA5) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/FPGA/lab2/output_files/") File("lab2.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/shnbw/Desktop/FPGA/lab2/output_files/") File("lab2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
