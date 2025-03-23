@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="lab3">
-		<CBX_INST_ENTRY INSTANCE_NAME="|part7|mult_sub:mult_1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e5n.v"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|part7|mult_sub:mult_2|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e5n.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|part6|mult_sub:mult_1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e5n.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|part6|mult_sub:mult_2|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e5n.v"/>
 	</PROJECT>
 </LOG_ROOT>

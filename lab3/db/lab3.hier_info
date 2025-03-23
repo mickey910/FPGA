@@ -1,4 +1,4 @@
-|part7
+|part6
 KEY[0] => regD[0].ACLR
 KEY[0] => regD[1].ACLR
 KEY[0] => regD[2].ACLR
@@ -31,7 +31,6 @@ KEY[0] => regA[4].ACLR
 KEY[0] => regA[5].ACLR
 KEY[0] => regA[6].ACLR
 KEY[0] => regA[7].ACLR
-KEY[0] => LEDR[0].DATAIN
 KEY[1] => regD[0].CLK
 KEY[1] => regD[1].CLK
 KEY[1] => regD[2].CLK
@@ -162,7 +161,7 @@ SW[9] => regB.OUTPUTSELECT
 SW[9] => regB.OUTPUTSELECT
 SW[9] => regB.OUTPUTSELECT
 SW[9] => regB.OUTPUTSELECT
-LEDR[0] <= KEY[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= <GND>
 LEDR[1] <= <GND>
 LEDR[2] <= <GND>
 LEDR[3] <= <GND>
@@ -202,7 +201,7 @@ HEX3[5] <= HEX:U3.port1
 HEX3[6] <= HEX:U3.port1
 
 
-|part7|mult_sub:mult_1
+|part6|mult_sub:mult_1
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -237,7 +236,7 @@ result[14] <= lpm_mult:lpm_mult_component.result
 result[15] <= lpm_mult:lpm_mult_component.result
 
 
-|part7|mult_sub:mult_1|lpm_mult:lpm_mult_component
+|part6|mult_sub:mult_1|lpm_mult:lpm_mult_component
 dataa[0] => mult_e5n:auto_generated.dataa[0]
 dataa[1] => mult_e5n:auto_generated.dataa[1]
 dataa[2] => mult_e5n:auto_generated.dataa[2]
@@ -276,7 +275,7 @@ result[14] <= mult_e5n:auto_generated.result[14]
 result[15] <= mult_e5n:auto_generated.result[15]
 
 
-|part7|mult_sub:mult_1|lpm_mult:lpm_mult_component|mult_e5n:auto_generated
+|part6|mult_sub:mult_1|lpm_mult:lpm_mult_component|mult_e5n:auto_generated
 dataa[0] => Mult0.IN7
 dataa[1] => Mult0.IN6
 dataa[2] => Mult0.IN5
@@ -311,7 +310,7 @@ result[14] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 result[15] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part7|mult_sub:mult_2
+|part6|mult_sub:mult_2
 dataa[0] => dataa[0].IN1
 dataa[1] => dataa[1].IN1
 dataa[2] => dataa[2].IN1
@@ -346,7 +345,7 @@ result[14] <= lpm_mult:lpm_mult_component.result
 result[15] <= lpm_mult:lpm_mult_component.result
 
 
-|part7|mult_sub:mult_2|lpm_mult:lpm_mult_component
+|part6|mult_sub:mult_2|lpm_mult:lpm_mult_component
 dataa[0] => mult_e5n:auto_generated.dataa[0]
 dataa[1] => mult_e5n:auto_generated.dataa[1]
 dataa[2] => mult_e5n:auto_generated.dataa[2]
@@ -385,7 +384,7 @@ result[14] <= mult_e5n:auto_generated.result[14]
 result[15] <= mult_e5n:auto_generated.result[15]
 
 
-|part7|mult_sub:mult_2|lpm_mult:lpm_mult_component|mult_e5n:auto_generated
+|part6|mult_sub:mult_2|lpm_mult:lpm_mult_component|mult_e5n:auto_generated
 dataa[0] => Mult0.IN7
 dataa[1] => Mult0.IN6
 dataa[2] => Mult0.IN5
@@ -420,7 +419,7 @@ result[14] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 result[15] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part7|HEX:U3
+|part6|HEX:U3
 hex[0] => Decoder0.IN3
 hex[1] => Decoder0.IN2
 hex[2] => Decoder0.IN1
@@ -434,7 +433,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part7|HEX:U2
+|part6|HEX:U2
 hex[0] => Decoder0.IN3
 hex[1] => Decoder0.IN2
 hex[2] => Decoder0.IN1
@@ -448,7 +447,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part7|HEX:U1
+|part6|HEX:U1
 hex[0] => Decoder0.IN3
 hex[1] => Decoder0.IN2
 hex[2] => Decoder0.IN1
@@ -462,7 +461,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part7|HEX:U0
+|part6|HEX:U0
 hex[0] => Decoder0.IN3
 hex[1] => Decoder0.IN2
 hex[2] => Decoder0.IN1
