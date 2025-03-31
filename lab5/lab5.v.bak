@@ -1,0 +1,18 @@
+/* part2 RAM R/W 1-port M10K memory*/
+module part2 (SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3)
+input [9:0] SW, KEY;
+output [9:0] LEDR;
+output [6:0] HEX0, HEX1, HEX2, HEX3;
+
+assign [4:0] address = SW[8:4];
+assign [3:0] datain = SW[3:0];
+assign wren = SW[9];
+assign clk = KEY[0];
+ 
+
+//define RAM
+
+ram1port
+
+
+endmodule
