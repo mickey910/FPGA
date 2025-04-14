@@ -1,0 +1,136 @@
+/*part2 process*/
+module part2(
+	input [3:0]KEY,
+	output [9:0] LEDR,
+	output [6:0] HEX0,HEX1,HEX2,HEX3,HEX4,HEX5
+);
+wire [7:0] DIN;
+wire [4:0] addr;
+wire PCLK;
+wire MCLK;
+wire rst;
+assign PCLK = KEY[2];
+assign MCLK = KEY[1];
+assign rst = KEY[0];
+
+
+//counter
+assign addr = counter;
+reg [4:0] counter;
+reg [7:0] P_DIN;
+parameter count = 5'd31;
+
+always @(negedge MCLK or negedge rst)begin
+	if (~rst)begin
+		counter <= 5'b0;
+		P_DIN <= 8'b0;
+	end
+	else if(counter == count)begin
+		counter <= 5'b0;
+		P_DIN <= 8'b0; //BUS為上一個DIN
+   end
+   else begin
+		counter <= counter + 1;
+		P_DIN <= DIN;
+   end      
+end
+
+
+// memory
+ROM_8bit rom(
+	.address(addr),
+	.clock(~MCLK),//NEGEDGE CLOCK
+	.q(DIN)
+);
+
+
+//processor
+reg [7:0] REG [7:0];//8個8bit reg
+reg [7:0] LEDR_REG;
+reg [3:0] xindex;
+reg [3:0] yindex;
+reg [3:0] Xmvi; 
+wire[1:0] ins;
+wire[1:0] p_ins;
+assign LEDR = LEDR_REG;
+assign ins = DIN[7:6];
+assign p_ins = P_DIN[7:6];
+
+always @(*)begin
+		xindex = {1'b0, DIN[5:3]};
+		yindex = {1'b0, DIN[2:0]};
+end
+
+always @(negedge PCLK or negedge rst)begin
+	if(~rst)begin
+		REG[0] <= 8'b0;
+		REG[1] <= 8'b0;
+		REG[2] <= 8'b0;
+		REG[3] <= 8'b0;
+		REG[4] <= 8'b0;
+		REG[5] <= 8'b0;
+		REG[6] <= 8'b0;
+		REG[7] <= 8'b0;
+		Xmvi <= 4'b0;
+
+	end
+	else begin
+		LEDR_REG <= DIN;
+		case(ins)
+			2'b00:begin//mv
+				if(p_ins == 2'b01)
+					REG[Xmvi] <= DIN;
+				else
+					REG[xindex] <= REG[yindex];
+			end
+			2'b01:begin//mvI
+				Xmvi <= {1'b0, DIN[5:3]};
+			end
+			2'b10:begin//add
+				REG[xindex] <= REG[xindex] + REG[yindex];
+			end
+			2'b11:begin//sub
+				REG[xindex] <= REG[xindex] - REG[yindex];
+			end
+		endcase
+	end
+
+end
+			
+//HEX
+HEX U5(DIN[7:4], HEX5);//Processor的DIN腳位訊號指示燈
+HEX U4(DIN[3:0], HEX4);
+HEX U3(REG[0][7:4], HEX3);//R0暫存器儲存數值
+HEX U2(REG[0][3:0], HEX2);
+HEX U1(REG[1][7:4], HEX1);//R1暫存器儲存數值
+HEX U0(REG[1][3:0], HEX0);
+
+endmodule
+
+/*============== submodule =============*/
+module HEX (
+    input [3:0] hex,   // 4-bit 十六進制輸入
+    output reg [6:0] seg  // 7 段顯示器輸出
+);
+    always @(*) begin
+        case (hex)
+            4'h0: seg = 7'b1000000;  // 0
+            4'h1: seg = 7'b1111001;  // 1
+            4'h2: seg = 7'b0100100;  // 2
+            4'h3: seg = 7'b0110000;  // 3
+            4'h4: seg = 7'b0011001;  // 4
+            4'h5: seg = 7'b0010010;  // 5
+            4'h6: seg = 7'b0000010;  // 6
+            4'h7: seg = 7'b1111000;  // 7
+            4'h8: seg = 7'b0000000;  // 8
+            4'h9: seg = 7'b0010000;  // 9
+            4'hA: seg = 7'b0001000;  // A
+            4'hB: seg = 7'b0000011;  // B
+            4'hC: seg = 7'b1000110;  // C
+            4'hD: seg = 7'b0100001;  // D
+            4'hE: seg = 7'b0000110;  // E
+            4'hF: seg = 7'b0001110;  // F
+            default: seg = 7'b1000000;  // 預設關閉
+        endcase
+    end
+endmodule

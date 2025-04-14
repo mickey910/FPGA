@@ -56,8 +56,7 @@ assign a2 = timer[4:0]; //read address
 //timer
 reg [7:0] timer;
 reg [25:0] clk_count;
-//parameter sec = 26'd49999999;
-parameter sec = 26'd29999999;
+parameter sec = 26'd49999999;
 always @(posedge clk)begin
 	if (timer == 8'd31 & clk_count == sec)begin
         timer <= 0;
